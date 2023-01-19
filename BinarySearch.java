@@ -9,7 +9,24 @@ public class BinarySearch {
 
   // Check if the array `a` contains the given search key.
   public static <T> boolean contains(T[] a, T key, Comparator<T> comparator) {
-    throw new UnsupportedOperationException("TODO");
+
+    int low = 0;
+    int high = a.length - 1;
+
+    while (low <= high) {
+      int mid = (low + high) / 2;
+      int comparisonValue = comparator.compare(a[mid], key);
+
+      if (comparisonValue == 0) {
+        return true;
+      } else if (comparisonValue < 0) { //upper half of array
+        low = mid + 1;
+      } else { //lower half of array
+        high = mid - 1;
+      }
+    }
+
+    return false;
   }
 
   // Return the *first position* of `key` in `a`, or -1 if `key` does not occur.

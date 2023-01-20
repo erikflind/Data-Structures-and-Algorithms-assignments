@@ -31,7 +31,57 @@ public class BinarySearch {
 
   // Return the *first position* of `key` in `a`, or -1 if `key` does not occur.
   public static <T> int firstIndexOf(T[] a, T key, Comparator<T> comparator) {
-    throw new UnsupportedOperationException("TODO");
+    int low = 0;
+    int high = a.length - 1;
+
+    while (low <= high) {
+      int mid = (low + high) / 2;
+      int comparisonValue = comparator.compare(a[mid], key);
+
+      if (comparisonValue == 0) {
+        return helperFunction(a, key, comparator, low, mid); // if not perfect try to pass (mid - 1);
+
+          // [1, 2, 3, (3), 3, 4, 5]
+          // [1, (2), 3, 3]
+          // [3, 3]
+
+          // [1, 2, 2, 3, (3), 3, 4, 5, 6]
+          // [1, 2, (2), 3, 3]
+          // [(3), 3]
+
+          // if ( a[low] == key ) ??
+          // or is it: if (a[0] == key] ) ?? // no it has to be a[low] in case you check the top half of the array
+
+          // [1, 3, 3, 5, 6]
+          // [1, 3, 3]
+          // [1, 3]
+          // if low == mid ??
+
+      } else if (comparisonValue < 0) { // key is in upper half of array
+        low = mid + 1;
+      } else { // (comparisonValue > 0)
+        high = mid - 1; // key is in lower half of array
+      }
+    }
+
+    return -1;
+  }
+
+  public static <T> int helperFunction(T[] a, T key, Comparator<T> comparator, int low, int high) {
+    int initialKeyIndex = high;
+    while (!(low == high)) {
+      int mid = (low + high) / 2; // ????????
+      int comparisonValue = comparator.compare(a[mid], key);
+      if (comparisonValue == 0) {
+        return helperFunction(a, key, comparator, low, mid);
+      } else if (comparisonValue < 0) {
+        low = mid + 1;
+      } else {
+        high = mid - 1;
+      }
+
+    }
+    return initialKeyIndex;
   }
 
   // Versions of the above functions that use the natural ordering of the type T.

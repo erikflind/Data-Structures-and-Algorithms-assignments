@@ -9,15 +9,21 @@ c) 1,000 elements?
 d) 1,000,000 elements?
 
 Hint: You can count the comparisons using a debugger to step through your program line-by-line.
-
-TODO
+a) 4
+b) 7
+c) 10
+d) 20
 
 **Question**
 How many comparisons would firstIndexOf need for 1,000,000,000,000 elements?
 (This is way too big for your computer's memory!)
 Justify your answer.
 
-TODO
+Answer: 40
+
+The worst-case complexity of binary search is big O(log(n)). Using a calculating tool we can see that the answer to
+log2(n), where n = 1,000,000,000,000, is equal to 39.86. Since we can't have .86 of an operation we round up, and the
+answer is therefore 40 comparisons. (This also tracks with the previous answers, were we to use similar calculations.)
 
 Appendix: general information
 =============================
@@ -25,31 +31,43 @@ Appendix: general information
 **Question**
 How many hours did you spend on the assignment?
 
-TODO
+(Reading the preparation material for the first lecture: ~ 1 hour)
+Purely coding: ~ 4 hours
+Answering these questions: ~ 1 hour (to double-check everything, clean up code etc.)
+
+Total: approximately 5 hours
+        (+ reading = ~6 hours)
 
 **Questions**
 Which of the three spoilers did you use?
 
-TODO
+None! :)
 
 **Question**
 Do you know of any bugs or limitations?
 
-TODO
+When using these binary search functions we have to assume that the array is already sorted (in ascending order), which
+is a limitation. The items in the array also has to be comparable.
 
 **Question**
 Did you collaborate with any other students on this lab?
 If so, write with whom and in what way you collaborated.
 Also list any resources (including the web) you have used in creating your design.
 
-TODO
+I did not collaborate with anyone nor did I use any external resources. I only ever read the preparation material
+before the first lecture. I did not revisit it afterwards nor did I copy any of the code given in the examples.
+
+While coding, I did not use any material at all - including the preparation material - because I wanted to challenge
+myself to solve the problems using only my current knowledge and abilities.
 
 **Question**
 Did you encounter any serious problems?
 
-TODO
+I wouldn't call it serious, as IntelliJ/Java is kind enough to exit the program with a stackOverFlow exception... but I
+did get a few of these while trying to write firstIndexOf() recursively!
 
 **Question**
 What is your feedback on this assignment?
 
-TODO
+Very challenging and fun, I've always enjoyed math and problem-solving!
+I'm excited (and admittedly somewhat nervous) for what's coming next! :)

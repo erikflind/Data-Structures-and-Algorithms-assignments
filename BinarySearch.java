@@ -16,11 +16,11 @@ public class BinarySearch {
       int mid = (low + high) / 2;
       int comparisonValue = comparator.compare(a[mid], key);
 
-      if (comparisonValue == 0) {
+      if (comparisonValue == 0) { //key we are looking for
         return true;
-      } else if (comparisonValue < 0) { //upper half of array
+      } else if (comparisonValue < 0) { //key in upper half of array
         low = mid + 1;
-      } else { //lower half of array
+      } else { //key in lower half of array
         high = mid - 1;
       }
     }
@@ -32,22 +32,22 @@ public class BinarySearch {
   public static <T> int firstIndexOf(T[] a, T key, Comparator<T> comparator) {
     int low = 0;
     int high = a.length - 1;
-    int keyIndex = -1; // default return value if the key is not found
+    int keyIndex = -1; //default return value for if the key is not found within array
 
-    return helperFunction(a, key, comparator, low, high, keyIndex);
+    return firstIndexOf(a, key, comparator, low, high, keyIndex);
   }
 
-  public static <T> int helperFunction(T[] a, T key, Comparator<T> comparator, int low, int high, int keyIndex) {
-    if (!(low > high)) {
+  public static <T> int firstIndexOf(T[] a, T key, Comparator<T> comparator, int low, int high, int keyIndex) {
+    if (low <= high) {
       int mid = (low + high) / 2;
       int comparisonValue = comparator.compare(a[mid], key);
 
       if (comparisonValue == 0) {
-        return helperFunction(a, key, comparator, low, mid - 1, mid);
+        return firstIndexOf(a, key, comparator, low, mid - 1, mid);
       } else if (comparisonValue < 0) {
-        return helperFunction(a, key, comparator, mid + 1, high, keyIndex);
+        return firstIndexOf(a, key, comparator, mid + 1, high, keyIndex);
       } else {
-        return helperFunction(a, key, comparator, low, mid - 1, keyIndex);
+        return firstIndexOf(a, key, comparator, low, mid - 1, keyIndex);
       }
     }
 

@@ -11,6 +11,8 @@ Below is a short description of the **key concepts** involved in each assignment
 
 Scaffolding code was provided; we were tasked with implementing missing parts or refactoring brute force solutions.
 
+Every assignment / subrepo comes with a set of questions that have been answered in `answers.txt`.
+
 - [`assignments/a1/`](assignments/a1) – **Binary search**
   - binary search functions
   - `recursion`
@@ -32,5 +34,3 @@ Scaffolding code was provided; we were tasked with implementing missing parts or
   - cost estimations
   - `Uniform-Cost Search` (UCS) algorithm
   - `A*` algorithm [*optimisation*]
-
-In addition, every assignment / subrepo comes with a set of questions that have been answered in `answers.txt`.

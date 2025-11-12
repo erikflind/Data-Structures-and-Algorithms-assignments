@@ -9,9 +9,7 @@ No generative AI was used to solve these assignments in any way whatsoever.
 ## Repository structure and contents:
 Below is a short description of the **key concepts** involved in each assignment. 
 
-Scaffolding code was provided; we were tasked with implementing the missing parts or refactoring brute force solutions.
-
-In addition, every assignment / subrepo comes with a set of questions that have been answered in `answers.txt`.
+Scaffolding code was provided; we were tasked with implementing missing parts or refactoring brute force solutions.
 
 - [`assignments/a1/`](assignments/a1) – **Binary search**
   - binary search functions
@@ -34,3 +32,5 @@ In addition, every assignment / subrepo comes with a set of questions that have 
   - cost estimations
   - `Uniform-Cost Search` (UCS) algorithm
   - `A*` algorithm [*optimisation*]
+
+In addition, every assignment / subrepo comes with a set of questions that have been answered in `answers.txt`.
